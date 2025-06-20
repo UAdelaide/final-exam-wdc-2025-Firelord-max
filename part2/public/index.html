@@ -65,7 +65,7 @@
               } else if (data.user && data.user.role == 'owner') {
                   window.location.href = './owner-dashboard.html'
               }
-              // If role login successful and role is walker direct to walker page
+              // If role login unsuccessful update error message (displays to user)
               else {
                   this.errorMessage = data.message || 'Login failed. Please check your credentials.';
               }
