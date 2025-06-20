@@ -53,7 +53,7 @@ let db;
       )
     `);
 
-    // Insert data if table is empty
+    // Insert data
     const [rows] = await db.execute('SELECT COUNT(*) AS count FROM books');
       await db.execute(`
         INSERT INTO Users (username, email, password_hash, role) VALUES
