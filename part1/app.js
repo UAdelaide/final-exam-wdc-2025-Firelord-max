@@ -135,7 +135,7 @@ let db;
       await db.execute(`
         INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating, comments) VALUES
         ((SELECT request_id FROM WalkRequests WHERE request_id = 1), (SELECT walker_id FROM Users WHERE name = 'bobwalker'),(SELECT owner_id FROM Users WHERE name = alice123'), 5, 'Slow dog, but cute'),
-        ((SELECT dog_id FROM Dogs WHERE name = 'Bella'), '2025-06-10 09:30:00', 45, 'Beachside Ave', 'accepted');
+        ((SELECT request_id FROM WalkRequests WHERE request_id = 1), (SELECT walker_id FROM Users WHERE name = 'bobwalker'),(SELECT owner_id FROM Users WHERE name = alice123'), 5, 'Slow dog, but cute');
       `);
   } catch (err) {
     console.error('Error setting up database. Ensure Mysql is running: service mysql start', err);
