@@ -7,7 +7,7 @@
     <style>
         button {background-color: white; margin-top: 10000px; font-size: 1000px; bottom: 8px; position: relative; opacity: 25%;}
         body {background-color: red ;}
-        form {background-color: lightgreen; }
+        form {background-color: lightgreen; color: red}
     </style>
 </head>
 
@@ -15,7 +15,7 @@
     <div id="app">
         <form @submit.prevent="sike">
             <label for="dogpic">Some dogs arrive if form submitted:</label>
-            <input type="submit" value="Press for image">
+            <input btype="submit" value="Press for image">
         </form>
 
         <form @submit.prevent="sike">
