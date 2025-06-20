@@ -15,11 +15,11 @@ router.get('/', async (req, res) => {
 
 // GET dogs
 router.get('/getDogs', async (req, res) => {
-  if (!req.session.user || req.session.user.role !=== 'owner') {
-    return res.status(401).json({error : 'Unathorised'}); 
+  if (!req.session.user || req.session.user.role !== 'owner') {
+    return res.status(401).json({error : 'Unathorised'});
   }
-
   try {
+    const
 
   }
 })
