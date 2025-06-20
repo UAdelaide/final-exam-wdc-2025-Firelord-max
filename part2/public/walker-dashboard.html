@@ -84,6 +84,8 @@
             const result = await res.json();
             if (result) {
               return result.user.walker_id;
+            } else {
+              return res.status(401);
             }
           }
         }
