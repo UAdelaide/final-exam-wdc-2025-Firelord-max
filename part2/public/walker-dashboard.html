@@ -78,7 +78,9 @@
 
         async function getCurrentUser() {
           try {
-            const res = await fetch(`api/walks/me`)
+            const res = await fetch(`api/walks/me`, {
+              method: 'GET'
+            })
           }
         }
 
