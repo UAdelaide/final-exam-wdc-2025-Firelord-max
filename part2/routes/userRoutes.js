@@ -15,20 +15,15 @@ router.get('/', async (req, res) => {
 
 // GET dogs
 router.get('/getDogs', async (req, res) => {
-  console.log('Session user:', req.session.user);
-
   if (!req.session.user || req.session.user.role !== 'owner') {
-    return res.status(401).json({error : 'Unauthorized'});
+    return res.status(401).json({error : 'Unathorised'});
   }
   try {
-
-    const userId = req.session.user.user_id;
-
+    const user = req.session.user_id;
     const [rows] = await db.query(
       `SELECT dog_id, name FROM Dogs WHERE owner_id = ?`,
-      [userId]
-    );
-    res.json(rows);
+      [user]);
+      res.json(rows);
 
   } catch (error) {
     console.error(error);
