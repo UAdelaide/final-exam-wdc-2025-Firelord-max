@@ -19,10 +19,6 @@ router.post('/login', async function (req, res, next) {
 
         const user = rows[0];
 
-        if (user.password_hash !== password) {
-            return res.sendStatus(401); // wrong password
-        }
-
         return res.json({
             user: {
                 username: user.username,
