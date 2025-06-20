@@ -25,8 +25,11 @@ router.get('/getDogs', async (req, res) => {
       owner_id);
       res.json(rows);
 
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Failed to fetch dogs' });
   }
-})
+});
 
 // POST a new user (simple signup)
 router.post('/register', async (req, res) => {
