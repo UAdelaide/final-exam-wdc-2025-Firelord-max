@@ -51,7 +51,7 @@
                 username: this.username,
                 password: this.password
               });
-               
+
                 if (response.data.success) {
                     alert('Login successful!');
                     // Redirect or perform further actions
@@ -62,7 +62,6 @@
                 console.error('Login error:', error);
                 this.errorMessage = 'An error occurred during login.';
             }
-          }
         }
       }
     }).mount('#app');
