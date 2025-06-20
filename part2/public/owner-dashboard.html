@@ -89,6 +89,23 @@
           }
         }
 
+        async function LogOut() {
+          try {
+            const response = await fetch('/api/users/logout', {
+              method: 'GET',
+              credentials: 'include'
+            });
+
+            if (response.ok) {
+              window.location.href = './index.html'
+            } else {
+              console.error('Log Out failed');
+            }
+          } catch (error) {
+            console.error('Logut error', error);
+          }
+        }
+
         async function submitWalkRequest() {
           try {
             const res = await fetch('/api/walks', {
@@ -124,7 +141,8 @@
           walks,
           message,
           error,
-          submitWalkRequest
+          submitWalkRequest,
+          LogOut
         };
       }
     }).mount('#app');
