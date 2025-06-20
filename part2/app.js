@@ -11,8 +11,7 @@ app.use(express.static(path.join(__dirname, '/public')));
 // Routes
 const walkRoutes = require('./routes/walkRoutes');
 const userRoutes = require('./routes/userRoutes');
-var loginRouter = require('./routes/loginchecks');
-app.use('/api/users', loginRouter);
+
 
 app.use('/api/walks', walkRoutes);
 app.use('/api/users', userRoutes);
