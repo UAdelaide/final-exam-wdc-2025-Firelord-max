@@ -27,11 +27,11 @@
   <script>
     const { createApp } = Vue;
     createApp({
-      return {
-    username: '',
-    password: '',
-    errorMessage: ''
-  }
+      data: {
+        username: '',
+        password: '',
+        errorMessage: ''
+      },
       methods: {
         async login() {
           try {
