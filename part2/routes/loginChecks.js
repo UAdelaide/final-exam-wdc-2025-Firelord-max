@@ -9,15 +9,16 @@ router.post('/login', function (req, res, next) {
         FROM Users
         WHERE Users.username = ?`,
         [username]);
-        
+
     if (!username) {
         res.sendStatus(401);
     }
 
     password = db.execute(`SELECT Users.password_hash
         FROM Users
-        WHERE Users.password_hash = password
-        `);
+        WHERE Users.password_hash = ?
+        `, [password]);
+
     if (!password) {
         res.sendStatus(401);
     }
