@@ -25,7 +25,8 @@ router.post('/login', async function (req, res, next) {
 
         return res.json({
             user: {
-                username
+                username: user.username,
+                role: user.role
             }
         })
 
