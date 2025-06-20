@@ -3,6 +3,7 @@
 <head>
     <title>Express</title>
     <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
 
 <body>
@@ -11,7 +12,6 @@
         {{ picture }}
     </div>
 
-    <script>src="https://unpkg.com/vue@3/dist/vue.global.js"</script>
     <script>
         const app = Vue.createApp({
             data() {
@@ -25,7 +25,7 @@
                     try {
                         const response = await fetch(url);
                         const data = await response.json();
-                        if ()
+                        if (data.)
                     }
                 }
             }
