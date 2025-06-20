@@ -3,8 +3,7 @@ const router = express.Router();
 const db = require('../models/db');
 
 
-// GET dogs
-router.get('/')
+
 
 // GET all users (for admin/testing)
 router.get('/', async (req, res) => {
@@ -15,6 +14,9 @@ router.get('/', async (req, res) => {
     res.status(500).json({ error: 'Failed to fetch users' });
   }
 });
+
+// GET dogs
+router.get('/getDogs')
 
 // POST a new user (simple signup)
 router.post('/register', async (req, res) => {
