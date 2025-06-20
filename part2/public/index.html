@@ -52,16 +52,16 @@
                 password: this.password
               });
 
-                if (response.data.success) {
-                    alert('Login successful!');
-                    // Redirect or perform further actions
-                } else {
-                    this.errorMessage = response.data.message || 'Login failed. Please check your credentials.';
-                }
-            } catch (error) {
-                console.error('Login error:', error);
-                this.errorMessage = 'An error occurred during login.';
-            }
+              if (response.data.success) {
+                  alert('Login successful!');
+                  // Redirect or perform further actions
+              } else {
+                  this.errorMessage = response.data.message || 'Login failed. Please check your credentials.';
+              }
+          } catch (error) {
+              console.error('Login error:', error);
+              this.errorMessage = 'An error occurred during login.';
+          }
         }
       }
     }).mount('#app');
