@@ -60,7 +60,7 @@ let db;
         INSERT INTO Users (username, email, password_hash, role) VALUES
         ('Benjamin', 'Benny@mail.com', '1234hash', 'walker'),
         ('Robert', 'Rob@mail.com', '1004hash', 'owner'),
-        ('Lisa', 'Lissy@mail.com', '1004hash', 'owner');
+        ('Lisa', 'Lissy@mail.com', '1011hash', 'walker');
       `);
     }
   } catch (err) {
