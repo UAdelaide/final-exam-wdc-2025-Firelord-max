@@ -112,7 +112,7 @@
             const walkerId = await getCurrentUser();
             if (!walkerId) throw new Error('Walker ID not found');
 
-            // Put in walkerID from function call (not hard  coded)
+            // Put in walkerID from function call (not hard coded) into fetch URL
             const res = await fetch(`/api/walks/${walkerId}/apply`, {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
