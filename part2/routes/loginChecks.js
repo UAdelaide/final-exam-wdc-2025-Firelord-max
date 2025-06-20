@@ -27,7 +27,7 @@ router.post('/login', async function (req, res, next) {
     } else {
         return res.status(400).send('Unknown role');
     }
-     catch (err) {
+    catch (err) {
         console.error(err);
         res.sendStatus(500);
     }
