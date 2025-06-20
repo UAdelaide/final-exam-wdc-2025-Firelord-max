@@ -53,8 +53,7 @@
               });
 
               if (response.data.success) {
-                  alert('Login successful!');
-                  if
+                  if (data.user && data)
               } else {
                   this.errorMessage = response.data.message || 'Login failed. Please check your credentials.';
               }
