@@ -16,7 +16,7 @@
         const app = Vue.createApp({
             data() {
                 return {
-                    picture: "hello"
+                    picture: null
                 }
             },
             methods() {
@@ -31,6 +31,10 @@
                             alert("Picture not found");
                             this.picture = null;
                         }
+                    } catch (error) {
+                        console.error("Fetch error:", error);
+                        alert("Something went wrong.");
+                    }
                     }
                 }
             }
