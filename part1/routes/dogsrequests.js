@@ -30,5 +30,6 @@ router.get('walkers/summary', async (req, res) => {
         WHERE Users.role = 'walker'
         GROUP BY Users.username
         `);
+    res.json(rows);
 });
 module.exports = router;
