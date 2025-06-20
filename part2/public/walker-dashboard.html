@@ -55,16 +55,19 @@
           }
         }
 
-        async function LogOut() {
+         async function LogOut() {
           try {
+            // Make get request to logout
             const response = await fetch('/api/users/logout', {
               method: 'GET',
               credentials: 'include'
             });
 
+            // If logout successful redirect to index (main) page
             if (response.ok) {
               window.location.href = './index.html'
             } else {
+            // Otherwise error
               console.error('Log Out failed');
             }
           } catch (error) {
