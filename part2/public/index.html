@@ -14,6 +14,7 @@
   <!-- Form to enter username and password -->
   <div id="app" class="container py-5">
     <form @submit.prevent="login">
+      {{ errorMessage }}
       <label>Username:</label><br>
       <input type="text" v-model="username"><br>
 
