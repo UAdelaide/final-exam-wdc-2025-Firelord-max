@@ -115,6 +115,8 @@ let db;
         ('Lisa', 'Lissy@mail.com', '1011hash', 'owner');
       `);
     }
+
+    const [row]
   } catch (err) {
     console.error('Error setting up database. Ensure Mysql is running: service mysql start', err);
   }
