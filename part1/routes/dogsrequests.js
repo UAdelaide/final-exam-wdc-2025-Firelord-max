@@ -4,7 +4,7 @@ var db = require('../db');
 
 router.get('/api/dogs', async (req, res) => {
   const[rows] = await db.query(`
-    SELECT Dogs.name, Dogs.size, Us`)
+    SELECT Dogs.name, Dogs.size, Users.user_id`)
 })
 
 module.exports = router;
