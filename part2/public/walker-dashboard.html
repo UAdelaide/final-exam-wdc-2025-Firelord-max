@@ -85,6 +85,7 @@
               credentials: 'include'
             });
 
+            // Throw error is user id not found
             if (!res.ok) {
               throw new Error('Not logged in');
             }
