@@ -87,6 +87,9 @@
             } else {
               return res.status(401);
             }
+          } catch {
+            error.value = err.message;
+            message.value = '';
           }
         }
 
