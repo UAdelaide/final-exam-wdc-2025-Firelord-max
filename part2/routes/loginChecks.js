@@ -4,7 +4,12 @@ var db = require('../db');
 
 router.post('/login', function (req, res, next) {
     const { username, password } = req.body;
-
+    try {
+        const [rows] = await db.execute(
+            `SELECT username, password_hash, role FROM Users WHERE username = ?`,
+            [username]
+        );
+    }
     username = db.execute(`SELECT Users.username
         FROM Users
         WHERE Users.username = username
