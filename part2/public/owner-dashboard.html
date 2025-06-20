@@ -92,7 +92,9 @@
 
         async function loadMyDogs() {
           try {
-            const response = await fetch('/api/users/getDogs')
+            const response = await fetch('/api/users/getDogs', {
+              method
+            })
           }
         }
         async function LogOut() {
