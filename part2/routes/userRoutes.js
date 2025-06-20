@@ -16,6 +16,10 @@ router.get('/', async (req, res) => {
 // GET dogs
 router.get('/getDogs', async (req, res) => {
   
+
+  try {
+
+  }
 })
 
 // POST a new user (simple signup)
