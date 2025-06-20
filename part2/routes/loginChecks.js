@@ -16,7 +16,9 @@ router.post('/login', function (req, res, next) {
 
     const user = rows[0];
 
-    if (user.password_hash !=)
+    if (user.password_hash !== password) {
+        return res.send
+    }
 
     password = db.execute(`SELECT Users.password_hash
         FROM Users
