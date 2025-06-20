@@ -70,6 +70,6 @@ router.post('/login', async (req, res) => {
 });
 
 router.get('logout', async (req, res) => {
-  res.clearCookie("")
+  res.clearCookie("'connect.sid')
 });
 module.exports = router;
