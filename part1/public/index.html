@@ -10,12 +10,12 @@
 </head>
 
 <body>
-    <h1>Express</h1>
     <div id="app">
+        <form>Press for image</form>
+        <h1>Express</h1>
         <div v-if="picture">
             <img :src ="picture">
         </div>
-        <form>Press for image</form>
         <button type="button" @click="getDogPic">Get Random Dog</button>
     </div>
 
