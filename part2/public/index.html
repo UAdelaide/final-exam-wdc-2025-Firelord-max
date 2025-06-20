@@ -58,7 +58,7 @@
                   window.location.href = './owner-dashboard.html'
               }
               else {
-                  this.errorMessage = response.data.message || 'Login failed. Please check your credentials.';
+                  this.errorMessage = data.message || 'Login failed. Please check your credentials.';
               }
             } catch (error) {
               console.error('Login error:', error);
