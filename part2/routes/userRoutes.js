@@ -20,7 +20,7 @@ router.get('/getDogs', async (req, res) => {
   }
   try {
     const owner_id = req.session.user_id;
-    const [rows]
+    const [rows] = req.session.
 
   }
 })
