@@ -131,7 +131,7 @@ let db;
         ((SELECT dog_id FROM Dogs WHERE name = 'Bella'), '2025-06-10 09:30:00', 45, 'Beachside Ave', 'accepted');
       `);
 
-    const [rows_3] = await db.execute('SSELECT COUNT(*) AS count FROM WalkRequests');
+    const [rows_4] = await db.execute('SSELECT COUNT(*) AS count FROM Ratings');
     if (rows_3[0].count === 0) {
       await db.execute(`
         INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status) VALUES
