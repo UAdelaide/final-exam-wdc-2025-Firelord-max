@@ -36,9 +36,7 @@ router.get('/walkers/summary', async (req, res) => {
 router.get('/testing', async (req, res) => {
     const[rows] = await db.query(`
         SELECT *
-        FROM WalkRatings r
-        JOIN WalkRequests w ON r.request_id = w.request_id
-        WHERE w.status = 'completed';
+        FROM WalkRatings
         `);
     res.json(rows);
 });
