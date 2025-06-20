@@ -20,6 +20,7 @@ router.post('/login', function (req, res, next) {
     if (!password) {
         res.sendStatus(401);
     }
+    res.json(``)
 }
 })
 module.exports = router;
