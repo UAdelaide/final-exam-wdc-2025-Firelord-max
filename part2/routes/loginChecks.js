@@ -5,12 +5,12 @@ var db = require('../db');
 router.post('/login', function (req, res, next) {
     const { username, password } = req.body;
 
-    username = db.execute(`SELECT Users.username
+    const [rows] = db.execute(`SELECT Users.username
         FROM Users
         WHERE Users.username = ?`,
         [username]);
 
-    if (!username) {
+    if (rows) {
         res.sendStatus(401);
     }
 
