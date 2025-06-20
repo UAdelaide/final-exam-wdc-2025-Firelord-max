@@ -134,7 +134,7 @@ let db;
     if (rows_3[0].count === 0) {
       await db.execute(`
         INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating, comments) VALUES
-        ((SELECT request_id FROM WalkRequests WHERE request_id = 1), (SELECT walker_id FROM Users WHERE name = 'bobwalker'),(SELECT owner_id FROM Users WHERE name = '2025-06-10 08:00:00', 30, 'Parklands', 'open'),
+        ((SELECT request_id FROM WalkRequests WHERE request_id = 1), (SELECT walker_id FROM Users WHERE name = 'bobwalker'),(SELECT owner_id FROM Users WHERE name = alice123'), 2025-06-10 08:00:00', 30, 'Parklands', 'open'),
         ((SELECT dog_id FROM Dogs WHERE name = 'Bella'), '2025-06-10 09:30:00', 45, 'Beachside Ave', 'accepted');
       `);
   } catch (err) {
