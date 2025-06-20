@@ -116,7 +116,7 @@ let db;
       `);
     }
 
-    const [rows(2)]
+    const [rows_2] = await db.execute('S')
   } catch (err) {
     console.error('Error setting up database. Ensure Mysql is running: service mysql start', err);
   }
