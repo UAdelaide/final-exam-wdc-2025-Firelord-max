@@ -11,7 +11,7 @@ app.use(express.static(path.join(__dirname, '/public')));
 const session = require('express-session');
 
 app.use(session({
-  secret: 'superSecretSession', // Use an env variable in production!
+  secret: 'superSecretSession',
   resave: false,
   saveUninitialized: false,
   cookie: {
