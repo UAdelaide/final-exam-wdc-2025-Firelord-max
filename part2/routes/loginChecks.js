@@ -27,7 +27,8 @@ router.post('/login', function (req, res, next) {
     } else {
         return res.status(400).send('Unknown role');
     } catch (err) {
-        con
+        console.error(err);
+        res.sendStatus(500);
     }
 });
 module.exports = router;
