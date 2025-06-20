@@ -98,9 +98,10 @@
 
         async function applyToWalk() {
           try {
-            const walkerId = await getCurrentUser(); // Await it!
-    if (!walkerId) throw new Error('Walker ID not found');
-            const res = await fetch(`/api/walks/${getCurrentUser()}/apply`, {
+            const walkerId = await getCurrentUser();
+            if (!walkerId) throw new Error('Walker ID not found');
+
+            const res = await fetch(`/api/walks/${walkerId}/apply`, {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify({ walker_id: user })
