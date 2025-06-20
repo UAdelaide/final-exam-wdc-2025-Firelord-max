@@ -59,8 +59,10 @@
           try {
             const response = await fetch('/api/users/LogOut', {
               method: 'GET',
-              
+              credentials: 'include'
             });
+
+            if (response)
           }
 
         }
