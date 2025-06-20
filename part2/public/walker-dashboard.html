@@ -86,7 +86,7 @@
 
             const user = await res.json();
             if (user) {
-              return user.user_id;
+              return user.walkerId;
             } else {
               return res.status(401);
             }
