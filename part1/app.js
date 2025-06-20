@@ -129,7 +129,7 @@ let db;
         ((SELECT dog_id FROM Dogs WHERE name = 'Max'), '2025-06-10 08:00:00', 30, 'Parklands', 'open'),
         ((SELECT dog_id FROM Dogs WHERE name = 'Bella'), '2025-06-10 09:30:00', 45, 'Beachside Ave', 'accepted');
       `);
-
+    }
     const [rows_4] = await db.execute('SELECT COUNT(*) AS count FROM WalkRatings');
     if (rows_3[0].count === 0) {
       await db.execute(`
@@ -137,7 +137,7 @@ let db;
         ((SELECT request_id FROM WalkRequests WHERE request_id = 1), (SELECT walker_id FROM Users WHERE name = 'bobwalker'),(SELECT owner_id FROM Users WHERE name = alice123'), 5, 'Slow dog, but cute'),
         ((SELECT request_id FROM WalkRequests WHERE request_id = 2), (SELECT walker_id FROM Users WHERE name = 'bobwalker'),(SELECT owner_id FROM Users WHERE name = alice123'), 2, 'Silly dog, ate bunny');
       `);
-
+        
   } catch (err) {
     console.error('Error setting up database. Ensure Mysql is running: service mysql start', err);
   }
