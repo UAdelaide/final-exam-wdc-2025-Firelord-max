@@ -28,8 +28,9 @@ router.post('/login', async function (req, res, next) {
         }
         if (user.role === 'walker') {
             return res.json({ redirect: 'walker-dashboard.html' });
-        } else {
-            return res.status(400).send('Unknown role');
+        }
+        if {
+            return (res.status(400).send('Unknown role');
         }
 
     } catch (err) {
