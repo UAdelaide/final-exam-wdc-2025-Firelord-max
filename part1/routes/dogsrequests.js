@@ -32,4 +32,16 @@ router.get('/walkers/summary', async (req, res) => {
         `);
     res.json(rows);
 });
+
+router.get('/testing', async (req, res) => {
+    const[rows] = await db.query(`
+        SELECT Users.username, COUNT(WalkRatings.rating_id) AS no_rating, AVG(WalkRatings.rating) AS avg_rating, COUNT(CASE WHEN WalkRequests.status = 'completed' THEN 1 END)
+        FROM Users
+        INNER JOIN WalkRatings ON Users.user_id = WalkRatings.walker_id
+        INNER JOIN WalkRequests ON WalkRatings.request_id = WalkRequests.request_id
+        WHERE Users.role = 'walker'
+        GROUP BY Users.username
+        `);
+    res.json(rows);
+});
 module.exports = router;
