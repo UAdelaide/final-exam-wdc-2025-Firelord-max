@@ -7,8 +7,9 @@ router.post('/login', function (req, res, next) {
 
     username = db.execute(`SELECT Users.username
         FROM Users
-        WHERE Users.username = ?`, [username]
-        );
+        WHERE Users.username = ?`,
+        [username]);
+        
     if (!username) {
         res.sendStatus(401);
     }
