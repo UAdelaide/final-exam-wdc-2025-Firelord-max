@@ -2,10 +2,10 @@ var express = require('express');
 var router = express.Router();
 var db = require('../db');
 
-router.post('/login', function (req, res, next) {
+router.post('/login', async function (req, res, next) {
     const { username, password } = req.body;
 
-    const [rows] = db.execute(`SELECT Users.username
+    const [rows] = await db.execute(`SELECT Users.username
         FROM Users
         WHERE Users.username = ?`,
         [username]);
