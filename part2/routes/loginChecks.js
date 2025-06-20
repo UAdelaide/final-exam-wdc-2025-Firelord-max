@@ -7,7 +7,9 @@ router.post('/login', function (req, res, next) {
 
     username = db.execute(`SELECT Users.username
         FROM Users
-        WHERE Users.username = username`)
+        WHERE Users.username = username
+        `);
+    if use
 
     const [rows_4] = await db.execute('SELECT COUNT(*) AS count FROM WalkRatings');
     if (rows_4[0].count === 0) {
