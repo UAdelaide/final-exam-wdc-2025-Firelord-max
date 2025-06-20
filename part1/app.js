@@ -116,7 +116,7 @@ let db;
       `);
     }
 
-    const [row]
+    const [rows(2)]
   } catch (err) {
     console.error('Error setting up database. Ensure Mysql is running: service mysql start', err);
   }
