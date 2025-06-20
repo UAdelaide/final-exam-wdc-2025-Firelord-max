@@ -20,10 +20,12 @@ router.post('/login', function (req, res, next) {
         return res.sendStatus(401);
     }
 
-    if (user.role == 'owner') {
+    if (user.role === 'owner') {
         return res.json({redirect: 'owner-dashboard.html'});
-    } else if (user.role == 'walker') {
+    } else if (user.role === 'walker') {
         return res.json({redirect: 'walker-dashboard.html'});
+    } else {
+        return res.status(400).send('Unknown role');
     }
 });
 module.exports = router;
