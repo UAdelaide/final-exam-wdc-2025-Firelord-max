@@ -42,6 +42,7 @@
         // When login button pressed
         async login() {
           try {
+            // Refresh error message and make 
             this.errorMessage = '';
               const response = await fetch('/api/users/login', {
               method: 'POST',
