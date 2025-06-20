@@ -82,7 +82,10 @@
               method: 'GET'
             });
             const result = await res.json();
-          } 
+            if (result) {
+              return 
+            }
+          }
         }
 
         async function applyToWalk(requestId) {
