@@ -53,14 +53,16 @@ let db;
       )
     `);
 
-    // Insert data
+    // Insert data if table is empty
     const [rows] = await db.execute('SELECT COUNT(*) AS count FROM books');
+    if (rows[0].count === 0) {
       await db.execute(`
         INSERT INTO Users (username, email, password_hash, role) VALUES
         ('Benjamin', 'Benny@mail.com', '1234hash', 'walker'),
         ('Robert', 'Rob@mail.com', '1004hash', 'owner'),
-        ('Lisa', 'Lissy@mail.com', '1011hash', 'walker');
+        ('Lisa', 'Lissy@mail.com', '1011hash', 'owner');
       `);
+    }
   } catch (err) {
     console.error('Error setting up database. Ensure Mysql is running: service mysql start', err);
   }
