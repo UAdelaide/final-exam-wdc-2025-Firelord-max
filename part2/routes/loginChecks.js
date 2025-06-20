@@ -20,6 +20,8 @@ router.post('/login', function (req, res, next) {
         return res.sendStatus(401);
     }
 
-    if (user.role == '')
+    if (user.role == 'owner') {
+        return res.json({redirect})
+    }
 });
 module.exports = router;
