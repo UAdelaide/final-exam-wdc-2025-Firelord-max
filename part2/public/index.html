@@ -55,7 +55,7 @@
               if (response.data.success) {
                   if (data.user && data.user.role == 'walker') {
                     window.location.href = './walker-dashboard.html'
-                  }
+                  } else if (data.user && data.user.role == 'owner')
               } else {
                   this.errorMessage = response.data.message || 'Login failed. Please check your credentials.';
               }
