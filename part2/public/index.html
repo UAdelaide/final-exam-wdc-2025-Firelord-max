@@ -52,13 +52,13 @@
                 password: this.password
               });
 
-              if (response.data.success) {
+
                   if (data.user && data.user.role == 'walker') {
                     window.location.href = './walker-dashboard.html'
                   } else if (data.user && data.user.role == 'owner') {
                     window.location.href = './owner-dashboard'
                   }
-                } else {
+                 else {
                   this.errorMessage = response.data.message || 'Login failed. Please check your credentials.';
                 }
             } catch (error) {
