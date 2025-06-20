@@ -17,7 +17,7 @@ router.get('/walkrequests/open', async (req, res) => {
         FROM Users
         INNER JOIN Dogs ON Users.user_id = Dogs.owner_id
         INNER JOIN WalkRequests ON Dogs.dog_id = WalkRequests.dog_id
-        WHERE WalkRequests.`);
+        WHERE WalkRequests.status = 'OPEN'`);
     res.json(rows);
 });
 
