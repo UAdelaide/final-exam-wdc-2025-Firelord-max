@@ -116,14 +116,14 @@ let db;
       `);
     }
     const [rows_2] = await db.execute('SSELECT COUNT(*) AS count FROM Dogs');
-    if (rows2[0].count === 0) {
+    if (rows_2[0].count === 0) {
       await db.execute(`
         INSERT INTO Dogs (owner_id, name, size) VALUES
         ((SELECT user_id FROM Users WHERE username = 'alice123'), 'Max', 'medium'),
         ((SELECT user_id FROM Users WHERE username = 'carol123'), 'Bella', 'small');
       `);
 
-    if (rows2[0].count === 0) {
+    if (rows_3[0].count === 0) {
       await db.execute(`
         INSERT INTO Dogs (owner_id, name, size) VALUES
         ((SELECT user_id FROM Users WHERE username = 'alice123'), 'Max', 'medium'),
