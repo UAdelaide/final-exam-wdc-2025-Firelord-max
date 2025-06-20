@@ -26,6 +26,8 @@ router.post('/login', function (req, res, next) {
         return res.json({redirect: 'walker-dashboard.html'});
     } else {
         return res.status(400).send('Unknown role');
+    } catch (err) {
+        con
     }
 });
 module.exports = router;
