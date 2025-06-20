@@ -79,7 +79,7 @@
         // Function to get current user_id
         async function getCurrentUser() {
           try {
-            // Make AJAX reuqest to route /api/u
+            // Make AJAX reuqest to path /api/users/me
             const res = await fetch(`/api/users/me`, {
               method: 'GET',
               credentials: 'include'
