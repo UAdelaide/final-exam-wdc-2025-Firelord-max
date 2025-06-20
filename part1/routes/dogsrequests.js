@@ -13,7 +13,7 @@ router.get('/dogs', async (req, res) => {
 
 router.get('/walkrequests/open', async (req, res) => {
     const[rows] = await db.query(`
-        SELECT WalkRequests.`);
+        SELECT WalkRequests.request_id, Dogs.name, `);
 })
 
 module.exports = router;
