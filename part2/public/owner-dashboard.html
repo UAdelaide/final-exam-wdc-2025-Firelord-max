@@ -103,8 +103,10 @@
             if (!response.ok) {
               throw new Error('Cant fetch dog');
             }
-            dogs
-          }
+            dogs.value = await res.json();
+          }  catch (err) {
+            error.value = err.message;
+    }
         }
         async function LogOut() {
           try {
