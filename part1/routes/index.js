@@ -7,5 +7,7 @@ router.get('/', function(req, res, next) {
 });
 
 
-router.get('/api/dogs', async (req, res) =>)
+router.get('/api/dogs', async (req, res) => {
+  const[rows] = await debug.query
+})
 module.exports = router;
