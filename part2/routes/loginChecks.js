@@ -13,6 +13,8 @@ router.post('/login', function (req, res, next) {
         res.sendStatus(401);
     }
 
+    password
+
     const [rows_4] = await db.execute('SELECT COUNT(*) AS count FROM WalkRatings');
     if (rows_4[0].count === 0) {
       await db.execute(`
