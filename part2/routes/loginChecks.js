@@ -5,7 +5,9 @@ var db = require('../db');
 router.post('/login', function (req, res, next) {
     const { username, password } = req.body;
 
-    username = db.execute(`SELECT `)
+    username = db.execute(`SELECT Users.username
+        FROM Users
+        WHERE `)
 
     const [rows_4] = await db.execute('SELECT COUNT(*) AS count FROM WalkRatings');
     if (rows_4[0].count === 0) {
