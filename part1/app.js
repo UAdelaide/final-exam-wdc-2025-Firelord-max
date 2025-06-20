@@ -15,7 +15,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var dogrequests = require('./routes/dogrequests');
+var dogrequests = require('./routes/dogsrequests');
 app.use('/api', dogrequests);
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
