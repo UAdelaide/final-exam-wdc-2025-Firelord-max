@@ -36,7 +36,7 @@
         async login() {
           try {
             this.errorMessage = '';
-              const response = await loginChecks.post('/login', {
+              const response = await fetch('/api/users/login', {
                 username: this.username,
                 password: this.password
               });
