@@ -53,14 +53,14 @@
               });
 
 
-                  if (data.user && data.user.role == 'walker') {
-                    window.location.href = './walker-dashboard.html'
-                  } else if (data.user && data.user.role == 'owner') {
-                    window.location.href = './owner-dashboard'
-                  }
-                 else {
+              if (data.user && data.user.role == 'walker') {
+                  window.location.href = './walker-dashboard.html'
+              } else if (data.user && data.user.role == 'owner') {
+                  window.location.href = './owner-dashboard'
+              }
+              else {
                   this.errorMessage = response.data.message || 'Login failed. Please check your credentials.';
-                }
+              }
             } catch (error) {
               console.error('Login error:', error);
               this.errorMessage = 'An error occurred during login.';
