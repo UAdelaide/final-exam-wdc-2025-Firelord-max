@@ -21,4 +21,5 @@ router.get('/walkrequests/open', async (req, res) => {
     res.json(rows);
 });
 
+router.get('walkers/summary')
 module.exports = router;
