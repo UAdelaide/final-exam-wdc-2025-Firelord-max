@@ -57,8 +57,8 @@ let db;
     if (rows[0].count === 0) {
       await db.execute(`
         INSERT INTO Users (username, email, password_hash, role) VALUES
-        ('Benjamin', 'Benny@mail.com', '1234hash', '),
-        ('To Kill a Mockingbird', 'Harper Lee'),
+        ('Benjamin', 'Benny@mail.com', '1234hash', 'walker'),
+        ('Robert', 'Rob@mail.com', '1004hash', 'walker'),
         ('Brave New World', 'Aldous Huxley')
       `);
     }
