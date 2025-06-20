@@ -19,7 +19,8 @@ router.get('/getDogs', async (req, res) => {
     return res.status(401).json({error : 'Unathorised'});
   }
   try {
-    const
+    const owner_id = req.session.user_id;
+    const [rows]
 
   }
 })
