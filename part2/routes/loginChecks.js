@@ -22,7 +22,7 @@ router.post('/login', function (req, res, next) {
 
     if (user.role == 'owner') {
         return res.json({redirect: 'owner-dashboard.html'});
-    } else {
+    } else if (user.role == 'walker') {
         return res.json({redirect: 'walker-dashboard.html'});
     }
 });
