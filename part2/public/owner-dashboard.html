@@ -91,6 +91,9 @@
         }
 
         async function loadMyDogs() {
+          const dogs = ref([]);
+          const error = ref('');
+
           try {
             const response = await fetch('/api/users/getDogs', {
               method: 'GET',
