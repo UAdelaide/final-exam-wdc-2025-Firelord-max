@@ -25,6 +25,6 @@ router.get('walkers/summary', async (req, res) => {
     const[rows] = await db.query(`
         SELECT Users.username, COUNT(WalkRatings.rating_id) AS no_rating, AVG(WalkRatings.rating) AS avg_rating
         FROM USERS
-        INNER JOIN `);
+        INNER JOIN WalkRatings ON Users.user_id = WalkRatings.`);
 });
 module.exports = router;
