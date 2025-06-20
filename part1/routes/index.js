@@ -7,5 +7,5 @@ router.get('/', function(req, res, next) {
 });
 
 
-router.get('')
+router.get('/api/dogs', async (req, res) =>)
 module.exports = router;
