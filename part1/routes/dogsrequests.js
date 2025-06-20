@@ -26,7 +26,8 @@ router.get('walkers/summary', async (req, res) => {
         SELECT Users.username, COUNT(WalkRatings.rating_id) AS no_rating, AVG(WalkRatings.rating) AS avg_rating, COUNT(WalkRequests.status = 'completed')
         FROM USERS
         INNER JOIN WalkRatings ON Users.user_id = WalkRatings.walker_id
-        INNER JOIN WalkRequests ON Users WalkRatings.request_id = WalkRequest
+        INNER JOIN WalkRequests ON Users WalkRatings.request_id = WalkRequest.request_id
+        
         `);
 });
 module.exports = router;
