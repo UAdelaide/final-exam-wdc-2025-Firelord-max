@@ -119,10 +119,9 @@ let db;
     const [rows_2] = await db.execute('SSELECT COUNT(*) AS count FROM Dogs');
     if (rows2[0].count === 0) {
       await db.execute(`
-        INSERT INTO Users (username, email, password_hash, role) VALUES
-        ('Benjamin', 'Benny@mail.com', '1234hash', 'walker'),
-        ('Robert', 'Rob@mail.com', '1004hash', 'owner'),
-        ('Lisa', 'Lissy@mail.com', '1011hash', 'owner');
+        INSERT INTO Dogs (owner_id, name, size) VALUES
+((SELECT user_id FROM Users WHERE username = 'alice123'), 'Max', 'medium'),
+((SELECT user_id FROM Users WHERE username = 'carol123'), 'Bella', 'small');
       `);
   } catch (err) {
     console.error('Error setting up database. Ensure Mysql is running: service mysql start', err);
