@@ -33,11 +33,4 @@ router.get('/walkers/summary', async (req, res) => {
     res.json(rows);
 });
 
-router.get('/testing', async (req, res) => {
-    const[rows] = await db.query(`
-        SELECT *
-        FROM WalkRatings
-        `);
-    res.json(rows);
-});
 module.exports = router;
