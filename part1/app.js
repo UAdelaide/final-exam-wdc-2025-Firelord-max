@@ -121,7 +121,7 @@ let db;
         ((SELECT user_id FROM Users WHERE username = 'alice123'), 'Max', 'medium'),
         ((SELECT user_id FROM Users WHERE username = 'carol123'), 'Bella', 'small');
       `);
-
+    }
     const [rows_3] = await db.execute('SSELECT COUNT(*) AS count FROM WalkRequests');
     if (rows_3[0].count === 0) {
       await db.execute(`
