@@ -68,10 +68,10 @@
               console.error('Log Out failed');
             }
           } catch (error) {
-              console.error('Logut error', error);
-            }
+            console.error('Logut error', error);
           }
         }
+
         async function applyToWalk(requestId) {
           try {
             const res = await fetch(`/api/walks/${requestId}/apply`, {
