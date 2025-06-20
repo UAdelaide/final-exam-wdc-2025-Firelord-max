@@ -14,35 +14,16 @@
   <div id="app" class="container py-5">
     <form @submit.prevent="login">
       <label>Username:</label><br>
-    <input type="text" v-model="username"><br>
+      <input type="text" v-model="username"><br>
 
-    <label>Password:</label><br>
-    <input type="password" v-model="password"><br>
+      <label>Password:</label><br>
+      <input type="password" v-model="password"><br>
 
-    <button type="submit">Log In</button>
+      <button type="submit">Log In</button>
     </form>
   </div>
 
-    <div id="username">
-      <label>Username:</label>
-      <br>
-      <input type="text" name="username">
-    </div>
-
-    <div id="password">
-      <label>Password:</label>
-      <br>
-      <input type="password" name="password">
-    </div>
-
-
-      <button>Log In</button>
-
-
-
-
-
-    <a href="owner-dashboard.html" class="btn btn-outline-primary me-2">Owner Dashboard</a>
+  <a href="owner-dashboard.html" class="btn btn-outline-primary me-2">Owner Dashboard</a>
     <a href="walker-dashboard.html" class="btn btn-outline-success">Walker Dashboard</a>
   </div>
 
