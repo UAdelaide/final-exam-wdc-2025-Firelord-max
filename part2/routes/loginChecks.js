@@ -22,6 +22,8 @@ router.post('/login', function (req, res, next) {
 
     if (user.role == 'owner') {
         return res.json({redirect: 'owner-dashboard.html'})
-    } else
+    } else {
+        return res.json({redirect: ''})
+    }
 });
 module.exports = router;
