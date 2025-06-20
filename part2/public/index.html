@@ -58,12 +58,14 @@
             // Store response
             const data = await response.json();
 
-            // If role is walker
+            // If role login successful and role is walker direct to walker page
               if (data.user && data.user.role == 'walker') {
                   window.location.href = './walker-dashboard.html'
+              // If role login successful and role is walker direct to owner page
               } else if (data.user && data.user.role == 'owner') {
                   window.location.href = './owner-dashboard.html'
               }
+              // If role login successful and role is walker direct to walker page
               else {
                   this.errorMessage = data.message || 'Login failed. Please check your credentials.';
               }
