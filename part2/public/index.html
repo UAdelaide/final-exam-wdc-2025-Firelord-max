@@ -48,8 +48,9 @@
           try {
             this.errorMessage = '';
               const response = await loginChecks.post('/login', {
-                username: this.username
-              })
+                username: this.username,
+                password: this.password
+              });
           }
         }
       }
