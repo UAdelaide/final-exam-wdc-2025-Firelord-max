@@ -15,9 +15,11 @@ router.post('/login', function (req, res, next) {
 
     password = db.execute(`SELECT Users.password_hash
         FROM Users
-        WHERE Users.username = username
+        WHERE Users.password_hash = password
         `);
-
+    if (!username) {
+        res.sendStatus(401);
+    }
     const [rows_4] = await db.execute('SELECT COUNT(*) AS count FROM WalkRatings');
     if (rows_4[0].count === 0) {
       await db.execute(`
