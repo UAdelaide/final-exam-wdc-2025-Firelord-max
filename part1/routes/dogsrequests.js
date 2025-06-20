@@ -8,7 +8,7 @@ router.get('/api/dogs', async (req, res) => {
     FROM Users
     INNER JOIN Dogs ON Users.user_id = Dogs.owner_id
     `);
-    res.json(rows);
+  res.json(rows);
 });
 
 module.exports = router;
