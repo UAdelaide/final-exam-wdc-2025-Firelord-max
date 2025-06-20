@@ -100,6 +100,7 @@
               return res.status(401);
             }
           } catch(err) {
+            // Set error message
             error.value = err.message;
             message.value = '';
           }
@@ -107,6 +108,7 @@
 
         async function applyToWalk(walkId) {
           try {
+            // Call 
             const walkerId = await getCurrentUser();
             if (!walkerId) throw new Error('Walker ID not found');
 
