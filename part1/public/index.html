@@ -11,9 +11,11 @@
 
 <body>
     <div id="app">
-        <form> @submit.prevent = sike();>
-            <label for="dogpic">Some dogs arrive if form submittted:</label>
+        <form @submit.prevent="sike">
+            <label for="dogpic">Some dogs arrive if form submitted:</label>
+            <input type="submit" value="Press for image">
         </form>
+
         <h1>Dogghy pics</h1>
         <div v-if="picture">
             <img :src ="picture">
