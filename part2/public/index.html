@@ -58,7 +58,7 @@
                   } else if (data.user && data.user.role == 'owner') {
                     window.location.href = './owner-dashboard'
                   }
-              } else {
+                } else {
                   this.errorMessage = response.data.message || 'Login failed. Please check your credentials.';
               }
             } catch (error) {
