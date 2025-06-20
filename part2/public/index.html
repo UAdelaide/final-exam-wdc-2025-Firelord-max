@@ -58,6 +58,7 @@
             // Store response
             const data = await response.json();
 
+            // If role is walker
               if (data.user && data.user.role == 'walker') {
                   window.location.href = './walker-dashboard.html'
               } else if (data.user && data.user.role == 'owner') {
