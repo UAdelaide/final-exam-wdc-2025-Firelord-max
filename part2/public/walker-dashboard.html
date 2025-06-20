@@ -91,8 +91,11 @@
             }
             // Parse the response JSON which contains user info
             const user = await res.json();
+
+            // If data returned return user.id
             if (user) {
               return user.id;
+            // Otherwise return error
             } else {
               return res.status(401);
             }
