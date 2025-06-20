@@ -11,7 +11,7 @@
 </head>
 <body class="bg-light">
   <h1 style="text-align: center; margin-top: 40px; color: rgb(0, 149, 255);">Welcome to the Dog<br>Walking Service!</h1>
-  <div id="form" class="container py-5" @submit.prevent="login">
+  <div id="app" class="container py-5" @submit.prevent="login">
     <div id="username">
       <label>Username:</label>
       <br>
@@ -56,7 +56,7 @@
               if (data.user && data.user.role == 'walker') {
                   window.location.href = './walker-dashboard.html'
               } else if (data.user && data.user.role == 'owner') {
-                  window.location.href = './owner-dashboard'
+                  window.location.href = './owner-dashboard.html'
               }
               else {
                   this.errorMessage = response.data.message || 'Login failed. Please check your credentials.';
