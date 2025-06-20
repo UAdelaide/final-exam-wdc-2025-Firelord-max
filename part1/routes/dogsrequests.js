@@ -27,7 +27,8 @@ router.get('walkers/summary', async (req, res) => {
         FROM USERS
         INNER JOIN WalkRatings ON Users.user_id = WalkRatings.walker_id
         INNER JOIN WalkRequests ON Users WalkRatings.request_id = WalkRequest.request_id
-        
+        WHERE Users.role = 'walker'
+        GROUP BY Users.username
         `);
 });
 module.exports = router;
