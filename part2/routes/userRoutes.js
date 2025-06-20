@@ -15,7 +15,7 @@ router.get('/', async (req, res) => {
 
 // GET dogs
 router.get('/getDogs', async (req, res) => {
-  
+  if (req.session.user.status)
 
   try {
 
