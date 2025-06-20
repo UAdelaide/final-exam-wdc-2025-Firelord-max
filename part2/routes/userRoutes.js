@@ -3,8 +3,6 @@ const router = express.Router();
 const db = require('../models/db');
 
 
-
-
 // GET all users (for admin/testing)
 router.get('/', async (req, res) => {
   try {
@@ -16,7 +14,9 @@ router.get('/', async (req, res) => {
 });
 
 // GET dogs
-router.get('/getDogs')
+router.get('/getDogs', async (req, res) => {
+  
+})
 
 // POST a new user (simple signup)
 router.post('/register', async (req, res) => {
