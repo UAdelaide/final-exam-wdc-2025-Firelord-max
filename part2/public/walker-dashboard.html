@@ -80,8 +80,9 @@
           try {
             const res = await fetch(`api/users/me`, {
               method: 'GET',
-              credentials: 
+              credentials: 'include'
             });
+            
             const result = await res.json();
             if (result) {
               return result.user.walker_id;
