@@ -10,10 +10,11 @@ router.post('/login', function (req, res, next) {
         WHERE Users.username = ?`,
         [username]);
 
-    if (rows) {
+    if (rows.length === 0) {
         res.sendStatus(401);
     }
 
+    const user = rows[0];
     password = db.execute(`SELECT Users.password_hash
         FROM Users
         WHERE Users.password_hash = ?
