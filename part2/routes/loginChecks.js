@@ -11,24 +11,14 @@ router.post('/login', function (req, res, next) {
         [username]);
 
     if (rows.length === 0) {
-        res.sendStatus(401);
+        return res.sendStatus(401);
     }
 
     const user = rows[0];
 
     if (user.password_hash !== password) {
-        return res.send
+        return res.sendStatus(401);
     }
 
-    password = db.execute(`SELECT Users.password_hash
-        FROM Users
-        WHERE Users.password_hash = ?
-        `, [password]);
-
-    if (!password) {
-        res.sendStatus(401);
-    }
-    res.json(`owner-dashboard.html`);
-}
-})
+});
 module.exports = router;
