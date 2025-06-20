@@ -116,7 +116,14 @@ let db;
       `);
     }
 
-    const [rows_2] = await db.execute('S')
+    const [rows_2] = await db.execute('SSELECT COUNT(*) AS count FROM Dogs');
+    if (rows[0].count === 0) {
+      await db.execute(`
+        INSERT INTO Users (username, email, password_hash, role) VALUES
+        ('Benjamin', 'Benny@mail.com', '1234hash', 'walker'),
+        ('Robert', 'Rob@mail.com', '1004hash', 'owner'),
+        ('Lisa', 'Lissy@mail.com', '1011hash', 'owner');
+      `);
   } catch (err) {
     console.error('Error setting up database. Ensure Mysql is running: service mysql start', err);
   }
