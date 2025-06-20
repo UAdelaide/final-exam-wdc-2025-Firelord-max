@@ -93,8 +93,9 @@
         async function loadMyDogs() {
           try {
             const response = await fetch('/api/users/getDogs', {
-              method
-            })
+              method: 'GET',
+              credentials: 'include'
+            });
           }
         }
         async function LogOut() {
