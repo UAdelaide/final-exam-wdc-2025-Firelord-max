@@ -23,14 +23,11 @@ router.post('/login', async function (req, res, next) {
             return res.sendStatus(401); // wrong password
         }
 
-        if (user.role === 'owner') {
-            return res.json({ redirect: 'owner-dashboard.html' });
-        }
-        if (user.role === 'walker') {
-            return res.json({ redirect: 'walker-dashboard.html' });
-        }
-
-        return res.status(400).send('Unknown role');
+        return res.json({
+            user: {
+                username
+            }
+        })
 
     } catch (err) {
         console.error(err);
