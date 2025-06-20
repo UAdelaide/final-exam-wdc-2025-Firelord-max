@@ -115,7 +115,6 @@ let db;
         ('Lisa', 'Lissy@mail.com', '1011hash', 'owner');
       `);
     }
-
     const [rows_2] = await db.execute('SSELECT COUNT(*) AS count FROM Dogs');
     if (rows2[0].count === 0) {
       await db.execute(`
@@ -123,6 +122,7 @@ let db;
         ((SELECT user_id FROM Users WHERE username = 'alice123'), 'Max', 'medium'),
         ((SELECT user_id FROM Users WHERE username = 'carol123'), 'Bella', 'small');
       `);
+
   } catch (err) {
     console.error('Error setting up database. Ensure Mysql is running: service mysql start', err);
   }
