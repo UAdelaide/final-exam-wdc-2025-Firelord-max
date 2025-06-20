@@ -21,7 +21,6 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
 
-
 let db;
 (async () => {
   try {
