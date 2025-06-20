@@ -87,7 +87,7 @@
             const user = await res.json();
             console.log('Fetched user from /me:', user);
             if (user) {
-              return user.user_id;
+              return user.id;
             } else {
               return res.status(401);
             }
