@@ -19,6 +19,7 @@ router.get('/getDogs', async (req, res) => {
   // Store owner id from cookie
   const ownerId = req.session.user.id;
 
+  // If no owner id return error
   if (!ownerId) {
     console.log('No user session found');
     return res.status(401).json({ error: 'Not logged in' });
