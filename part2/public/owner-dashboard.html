@@ -23,8 +23,9 @@
             <!-- Select dog box -->
             <label class="form-label">Dog ID</label>
             <select v-model="form.dog_id" class="form-control" required>
-            <!-- Walk request form -->
+            <!-- Loop through each dog in array myDogs -->
             <option v-for="dog in myDogs" :key="dog.dog_id" :value="dog.dog_id">
+              <!-- Display name -->
               {{ dog.name }}
             </option>
           </select>
