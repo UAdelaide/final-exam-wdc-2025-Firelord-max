@@ -25,28 +25,7 @@
       <button type="submit">Log In</button>
     </form>
   </div>
-  <div>
-  <table id="table-dog" v-if="dogs.length">
-      <thead>
-        <tr>
-          <th>Dog ID</th>
-          <th>Name</th>
-          <th>Size</th>
-          <th>Owner ID</th>
-          <th>Photo</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="dog in dogs" :key="dog.name">
-          <td>{{ dog.dog_id }}</td>
-          <td>{{ dog.name }}</td>
-          <td>{{ dog.size }}</td>
-          <td>{{ dog.owner_id }}</td>
-          <td><img :src="dog.photo" alt="Random Dog Photo" height="100px"></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+
 
   <script>
     const { createApp } = Vue;
@@ -56,8 +35,7 @@
         // To dynamically bind username and password for AJAX call and display error message
         username: '',
         password: '',
-        errorMessage: '',
-        Dogs: []
+        errorMessage: ''
         }
       },
       methods: {
@@ -95,30 +73,6 @@
               console.error('Login error:', error);
               this.errorMessage = 'An error occurred during login.';
             }
-          async function getDogs() {
-            try {
-              const res = await fetch ('/api/dogs/dogs');
-              if (!res.ok) {
-                throw new Error('Failed to fetch Dogs');
-              } else {
-                const theDogs = await res.json();
-                for (let dog of theDogs) {
-                  try {
-                    const response = await fetch('https://dog.ceo/api/breeds/image/random');
-                    const data = await response.json();
-                    dog.photo = data.message
-                  } catch (error) {
-                    console.log("Failed to fetch image", error);
-                    dog.photo = '';
-                  }
-                }
-                this.Dogs = theDogs
-              }
-            } catch (error) {
-              console.log("Failed to fetch dogs", error);
-            }
-            }
-          }
         }
       }
     }).mount('#app');
