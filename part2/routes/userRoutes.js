@@ -25,13 +25,13 @@ router.get('/getDogs', async (req, res) => {
     return res.status(401).json({ error: 'Not logged in' });
   }
 
-  // Select dogs where 
+  // Select dogs where dog owner matched owner id of logged in owner
   try {
     const [rows] = await db.query(
       'SELECT dog_id, name FROM Dogs WHERE owner_id = ?',
       [ownerId]
     );
-    console.log('Dogs fetched:', rows);
+    // 
     res.json(rows);
   } catch (err) {
     console.error('Error fetching dogs:', err);
