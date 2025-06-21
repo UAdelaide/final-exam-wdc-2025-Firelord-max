@@ -106,6 +106,7 @@
               throw new Error('Cant fetch dog');
             }
             myDogs.value = await response.json();
+            console.log("Fetched dogs:", myDogs.value);
           }  catch (err) {
             error.value = err.message;
     }
