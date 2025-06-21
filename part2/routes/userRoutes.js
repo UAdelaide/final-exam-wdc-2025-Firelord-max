@@ -27,7 +27,7 @@ router.get('/getDogs', async (req, res) => {
       `SELECT dog_id, name FROM Dogs WHERE owner_id = ?`,
       [user]);
       res.json(rows);
-      console.log("Dogs fetched from DB:", rows);
+      console.log("Dogs fetched from DB:", res.json(rows));
 
   } catch (error) {
     console.error(error);
