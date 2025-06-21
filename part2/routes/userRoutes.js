@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const db = require('../models/db');
-const pool = require('../db');
+
 
 
 // GET all users (for admin/testing)
