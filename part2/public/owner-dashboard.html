@@ -107,11 +107,12 @@
               credentials: 'include'
             });
 
+            // Throw error if failed
             if (!response.ok) {
               throw new Error('Cant fetch dog');
             }
             myDogs.value = await response.json();
-            console.log("Fetched dogs:", myDogs.value);
+            // Set error message
           }  catch (err) {
             error.value = err.message;
         }
