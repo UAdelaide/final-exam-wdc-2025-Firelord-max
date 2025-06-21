@@ -22,8 +22,8 @@
           <div class="mb-3">
             <!-- Select dog box -->
             <label class="form-label">Dog ID</label>
-            <!-- Walk request form -->
             <select v-model="form.dog_id" class="form-control" required>
+            <!-- Walk request form -->
             <option v-for="dog in myDogs" :key="dog.dog_id" :value="dog.dog_id">
               {{ dog.name }}
             </option>
