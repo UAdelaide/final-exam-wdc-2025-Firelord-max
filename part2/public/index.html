@@ -74,7 +74,27 @@
               this.errorMessage = 'An error occurred during login.';
             }
             async function getDogs() {
-
+              try {
+              const res = await fetch('/api/dogs/dogs');
+              if (!res.ok) {
+                throw new Error('Failed to fetch Dogs');
+              } else {
+                const allDogs = await res.json();
+                for (let dog of allDogs) {
+                  try {
+                    const response = await fetch('https://dog.ceo/api/breeds/image/random');
+                    const data = await response.json();
+                    dog.photo = data.message
+                  } catch (error) {
+                    console.log("Failed to fetch image", error);
+                    dog.photo = '';
+                  }
+                }
+                this.dogs = allDogs;
+              }
+            } catch (error) {
+              console.log("Failed to fetch dogs", error);
+            }
         }
         }
       }
