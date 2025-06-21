@@ -16,9 +16,6 @@ router.get('/', async (req, res) => {
 
 // GET dogs
 router.get('/getDogs', async (req, res) => {
-  console.log('/getDogs route hit');
-  console.log('Session in /getDogs:', req.session);
-
   const ownerId = req.session.user.id;
 
   if (!ownerId) {
