@@ -33,6 +33,7 @@ router.get('/getDogs', async (req, res) => {
     );
     // Send JSON string back to frontend
     res.json(rows);
+    // Otherwise set error message
   } catch (err) {
     console.error('Error fetching dogs:', err);
     res.status(500).json({ error: 'Failed to fetch dogs' });
