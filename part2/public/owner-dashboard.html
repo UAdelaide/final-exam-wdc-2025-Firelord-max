@@ -111,7 +111,7 @@
             if (!response.ok) {
               throw new Error('Cant fetch dog');
             }
-            // Set a
+            // Assign dogs to myDogs array
             myDogs.value = await response.json();
             // Set error message
           }  catch (err) {
