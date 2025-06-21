@@ -95,6 +95,7 @@
               console.error('Login error:', error);
               this.errorMessage = 'An error occurred during login.';
             }
+        }
           async function getDogs() {
             try {
               const res = await fetch ('/api/dogs/dogs');
@@ -117,7 +118,6 @@
             } catch (error) {
               console.log("Failed to fetch dogs", error);
             }
-          }
         }
       },
       mounted() {
