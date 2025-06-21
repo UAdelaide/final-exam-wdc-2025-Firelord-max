@@ -15,23 +15,25 @@ router.get('/', async (req, res) => {
 
 // GET dogs
 router.get('/getDogs', async (req, res) => {
-  console.log('/getDogs route hit');
-  const ownerId = req.session.user_id;
-  console.log("Session owner ID:", ownerId);
+  console.log('🔥 /getDogs route hit');
+  console.log('Session in /getDogs:', req.session);
 
-  if (!req.session.user || req.session.user.role !== 'owner') {
-    return res.status(401).json({error : 'Unathorised'});
+  const ownerId = req.session.user?.id;
+
+  if (!ownerId) {
+    console.log('No user session found');
+    return res.status(401).json({ error: 'Not logged in' });
   }
-  try {
-    const user = req.session.user_id;
-    const [rows] = await db.query(
-      `SELECT dog_id, name FROM Dogs WHERE owner_id = ?`,
-      [user]);
-      res.json(rows);
-      console.log("Dogs fetched from DB:", res.json(rows));
 
-  } catch (error) {
-    console.error(error);
+  try {
+    const [rows] = await pool.query(
+      'SELECT dog_id, name FROM Dogs WHERE owner_id = ?',
+      [ownerId]
+    );
+    console.log('Dogs fetched:', rows);
+    res.json(rows);
+  } catch (err) {
+    console.error('Error fetching dogs:', err);
     res.status(500).json({ error: 'Failed to fetch dogs' });
   }
 });
