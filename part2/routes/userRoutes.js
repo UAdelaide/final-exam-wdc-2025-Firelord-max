@@ -15,7 +15,7 @@ router.get('/', async (req, res) => {
 
 // GET dogs
 router.get('/getDogs', async (req, res) => {
-  console.log('🔥 /getDogs route hit');
+  console.log('/getDogs route hit');
   const ownerId = req.session.user_id;
   console.log("Session owner ID:", ownerId);
 
