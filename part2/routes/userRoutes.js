@@ -15,7 +15,9 @@ router.get('/', async (req, res) => {
 
 // GET dogs
 router.get('/getDogs', async (req, res) => {
-  
+  const ownerId = req.session.user.id;
+  console.log("Session owner ID:", ownerId);
+
   if (!req.session.user || req.session.user.role !== 'owner') {
     return res.status(401).json({error : 'Unathorised'});
   }
