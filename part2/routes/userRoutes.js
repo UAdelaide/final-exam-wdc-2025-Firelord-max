@@ -16,6 +16,7 @@ router.get('/', async (req, res) => {
 
 // GET dogs
 router.get('/getDogs', async (req, res) => {
+  // Store owner id from cookie
   const ownerId = req.session.user.id;
 
   if (!ownerId) {
